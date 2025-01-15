@@ -1,0 +1,18 @@
+{% comment %} <div class="button-container">
+    {% if button %}
+        <a href="{{ button.action }}" class="btn {% if button.is_primary %} button-primary {% endif %}">
+            {{ button.label }}
+        </a>
+    {% endif %}
+</div>
+
+<button type="button" class="btn">Base class</button> {% endcomment %}
+
+
+
+<button  type="button"> {% if button %}
+    <a href="/{{ button.action }}" class="btn {% if button.is_primary %} btn-primary {% endif %}">
+        {{ button.label }}
+    </a>
+{% endif %}</button>
+

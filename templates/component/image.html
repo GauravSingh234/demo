@@ -1,0 +1,10 @@
+<div class="image-container">
+    {% if image %}
+        <img src="{{ image.image.url }}" alt="{{ image.title }}">
+        {% if image.description %}
+            <div class="image-description">
+                <p>{{ image.description }}</p>
+            </div>
+        {% endif %}
+    {% endif %}
+</div>

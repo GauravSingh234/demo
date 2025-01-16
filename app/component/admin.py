@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Slider, Card, Button, Image,Video,FormField
+from .models import Slider, Card, Button, Image,Video,FormField  ,Post ,SocialMediaIcon
                      
 # Register your models here.
 
@@ -48,3 +48,17 @@ class FormFieldAdmin(admin.ModelAdmin):
     list_display = ('label', 'field_type', 'is_required')
     list_filter = ('field_type', 'is_required')
     search_fields = ('label',)
+
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'content')
+    list_filter = ('title', 'content')
+    search_fields = ('title',)    
+
+
+# Social Media Icons Admin
+@admin.register(SocialMediaIcon)
+class SocialMediaIconAdmin(admin.ModelAdmin):
+    list_display = ('platform', 'url')
+    search_fields = ('platform',)

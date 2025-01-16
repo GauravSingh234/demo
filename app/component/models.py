@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+
+
 # Slider/Carousel
 class Slider(models.Model):
     title = models.CharField(max_length=200)
@@ -46,3 +48,32 @@ class Image(models.Model):
 
     def __str__(self):
         return self.title if self.title else "Image"
+    
+
+
+# Videos
+class Video(models.Model):
+    title = models.CharField(max_length=200)
+    video_url = models.URLField()
+    description = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.title    
+    
+
+
+# Forms
+class FormField(models.Model):
+    label = models.CharField(max_length=100)
+    field_type = models.CharField(
+        max_length=50, choices=[
+            ('text', 'Text'),
+            ('email', 'Email'),
+            ('password', 'Password'),
+            ('textarea', 'Textarea'),
+        ]
+    )
+    is_required = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.label

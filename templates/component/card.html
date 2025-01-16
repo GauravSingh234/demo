@@ -117,7 +117,7 @@
     </div>
 </div>
   {% endcomment %}
-
+{% comment %} 
   <div class="container mt-4">
     <div class="row">
         {% for card in cards %}
@@ -141,4 +141,74 @@
         </div>
         {% endfor %}
     </div>
-</div>
+</div> {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            color: #333;
+        }
+
+        .card-meta,
+        .card-template {
+            font-size: 14px;
+            color: #555;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <!-- Example Card 1 -->
+        <div class="card">
+            <h2 class="card-title">Model Name: ExampleModel</h2>
+            <p class="card-meta">Created on: 2025-01-15</p>
+            <p class="card-template">Template Path: templates/examplemodel.html</p>
+        </div>
+        <!-- Example Card 2 -->
+        <div class="card">
+            <h2 class="card-title">Model Name: AnotherModel</h2>
+            <p class="card-meta">Created on: 2025-01-10</p>
+            <p class="card-template">Template Path: templates/anothermodel.html</p>
+        </div>
+    </div>
+</body>
+</html>

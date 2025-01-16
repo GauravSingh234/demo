@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Slider, Card, Button, Image
+from .models import Slider, Card, Button, Image,Video,FormField
                      
 # Register your models here.
 
@@ -32,3 +32,19 @@ class ButtonAdmin(admin.ModelAdmin):
 class ImageAdmin(admin.ModelAdmin):
     list_display = ('title',)
     search_fields = ('title',)
+
+
+
+# Videos Admin
+@admin.register(Video)
+class VideoAdmin(admin.ModelAdmin):
+    list_display = ('title', 'video_url')
+    search_fields = ('title',)
+
+
+# Form Fields Admin
+@admin.register(FormField)
+class FormFieldAdmin(admin.ModelAdmin):
+    list_display = ('label', 'field_type', 'is_required')
+    list_filter = ('field_type', 'is_required')
+    search_fields = ('label',)
